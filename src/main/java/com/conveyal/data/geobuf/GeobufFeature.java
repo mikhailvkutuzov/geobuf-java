@@ -88,7 +88,7 @@ public class GeobufFeature implements Cloneable, Serializable {
         // first length is number of polygons, next is number of rigns, number of coordinates for each ring,
         // number of rings, number of coordinates for each ring . . .
         int len = 0, coordGlobalIdx = 0;
-        int npoly = gbgeom.getLengths(len++);
+        int npoly = gbgeom.getLengthsCount() > 0 ? gbgeom.getLengths(len++) : 0;
 
         Polygon[] polygons = new Polygon[npoly];
 
